@@ -1,0 +1,46 @@
+{
+  "name": "10x-code-context",
+  "version": "1.0.0",
+  "description": "Context engineering middleware for Claude Code — intelligent codebase indexing, token-efficient file selection, local tracking, testing, auditing, and session persistence via MD files.",
+  "bin": {
+    "10x-code-context": "bin/cli.js",
+    "ccs": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "agents/",
+    "templates/",
+    "references/",
+    "CLAUDE.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude-code",
+    "context-engineering",
+    "codebase-indexing",
+    "token-optimization",
+    "agent-skill",
+    "ai-coding",
+    "claude",
+    "anthropic",
+    "10x"
+  ],
+  "author": {
+    "name": "10x.in",
+    "url": "https://github.com/AnitChaudhry"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnitChaudhry/10x-Code-Contex.git"
+  },
+  "homepage": "https://10x.in",
+  "bugs": {
+    "url": "https://github.com/AnitChaudhry/10x-Code-Contex/issues"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

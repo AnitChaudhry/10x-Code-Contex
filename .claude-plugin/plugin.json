@@ -1,0 +1,51 @@
+{
+  "name": "10x-code-context",
+  "description": "Context engineering middleware for Claude Code — intelligent codebase indexing, token-efficient file selection, local tracking, testing, auditing, and session persistence via MD files. Features: 19 slash commands, 5 agents, hooks system (session orientation, auto-commit, write validation, session capture), processing pipeline, graph analysis, self-evolution, atomic notes, topic maps, schema enforcement.",
+  "version": "1.0.0",
+  "author": {
+    "name": "10x.in",
+    "email": "anitc98@gmail.com",
+    "url": "https://github.com/AnitChaudhry"
+  },
+  "repository": "https://github.com/AnitChaudhry/10x-Code-Contex",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "context-engineering",
+    "codebase-indexing",
+    "token-optimization",
+    "agent-skill",
+    "testing",
+    "auditing",
+    "code-review",
+    "knowledge-management",
+    "session-rhythm",
+    "processing-pipeline",
+    "graph-analysis",
+    "self-evolution",
+    "hooks",
+    "atomic-notes",
+    "topic-maps"
+  ],
+  "hooks": "hooks/hooks.json",
+  "agents": [
+    "agents/context-builder.md",
+    "agents/test-runner.md",
+    "agents/code-auditor.md",
+    "agents/git-tracker.md",
+    "agents/knowledge-guide.md"
+  ],
+  "features": [
+    "session-rhythm",
+    "processing-pipeline",
+    "graph-analysis",
+    "self-evolution",
+    "maintenance",
+    "atomic-notes",
+    "topic-maps",
+    "wiki-links",
+    "self-space",
+    "schema",
+    "guardrails"
+  ]
+}

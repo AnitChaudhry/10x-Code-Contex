@@ -1,0 +1,31 @@
+# Context files (generated per-project)
+.ccs/
+
+# Site (hosted separately in private repo)
+site/
+
+#npm Auth Token
+npm_recovery_codes.txt
+
+# Node
+node_modules/
+dist/
+/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# MCP config (may contain auth tokens)
+.mcp.json
+
+# Claude Code local settings (user-specific permissions)
+.claude/settings.local.json
+
+# Ops sessions (immutable)
+ops/
+bash.exe.stackdump
