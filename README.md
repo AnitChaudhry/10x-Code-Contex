@@ -135,6 +135,55 @@ Set your preference on first init (saved in `.ccs/preferences.json`):
 - **Incremental** — Auto-detect changed files, re-index only those
 - **Session-based** — Fresh index at the start of each session
 
+## Swarm Architecture
+
+This skill set is designed as a **standalone skills tree** — reusable building blocks that any agent, terminal, or orchestrator can discover and consume.
+
+### Discovery Flow
+
+```
+Agent joins workspace → reads SKILLS-TREE.md (~2K tokens)
+  → matches task to skill via tags/category
+  → reads only that skill's SKILL.md (~3-8K tokens)
+  → executes with isolated context
+```
+
+### Index Files
+
+| File | Purpose | Audience |
+|------|---------|----------|
+| `SKILLS-TREE.md` | Master index — all 19 skills with metadata | Agents (human-readable) |
+| `manifest.json` | Machine-readable skill/agent definitions | SDK, orchestrators, CI/CD |
+| `AGENTS-INDEX.md` | 5 agents with tool restrictions + parallel safety | Agent coordinators |
+
+### Skill Metadata (in each SKILL.md frontmatter)
+
+Every skill includes enriched YAML frontmatter:
+- `category` — context, workflow, quality, git
+- `tags` — searchable keywords for matching
+- `depends-on` — prerequisite skills
+- `input` / `output` — what it expects and produces
+- `token-estimate` — approximate token budget
+- `parallel-safe` — whether multiple agents can run it concurrently
+
+### For SDK Integration
+
+```python
+import json
+
+manifest = json.load(open("manifest.json"))
+for skill in manifest["skills"]:
+    if "debug" in skill["tags"]:
+        print(f"Use {skill['id']} → {skill['path']}")
+```
+
+### Coordination
+
+- **Filesystem-based** — no network required, all state in `.ccs/`
+- **Parallel reads** — any number of agents can read index simultaneously
+- **Write locks** — only one agent writes to `.ccs/task.md` at a time (append-only)
+- **Context isolation** — each skill runs in forked context, no cross-skill state leakage
+
 ## License
 
 MIT

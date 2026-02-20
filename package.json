@@ -14,7 +14,10 @@
     "references/",
     "CLAUDE.md",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "SKILLS-TREE.md",
+    "AGENTS-INDEX.md",
+    "manifest.json"
   ],
   "keywords": [
     "claude-code",

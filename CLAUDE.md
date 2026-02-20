@@ -2,6 +2,14 @@
 
 Context engineering middleware for Claude Code. Builds intelligent, token-efficient context for every user query by indexing the codebase locally and maintaining session state as MD files.
 
+## Skills Tree (Start Here)
+
+**Agents**: Read `SKILLS-TREE.md` first — it's the master index (~2K tokens) with all 19 skills, categories, tags, dependencies, and token estimates. Only drill into `skills/<name>/SKILL.md` for the specific skill you need.
+
+**Programmatic access**: Parse `manifest.json` for machine-readable skill/agent definitions (SDK, orchestrators, CI/CD).
+
+**Agent lookup**: See `AGENTS-INDEX.md` for the 5 available agents with tool restrictions and parallel safety.
+
 ## Slash Commands
 
 ### Context Management
